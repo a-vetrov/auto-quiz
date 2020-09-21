@@ -4,7 +4,8 @@ import Car from "./components/Car";
 import StartButton from "./components/StartButton";
 import { Button } from 'antd';
 import Question from "./components/Question";
-import {quiz} from "./config";
+import {MAX_POINTS, quiz} from "./config";
+import Flag from "./components/Flag";
 
 
 const colors = {
@@ -61,10 +62,25 @@ function App() {
      setStatus(null) ;
   } ;
 
+  const getNextTeam = () => {
+      let newTeam = currentTeam + 1 ;
+
+      for (let i=0; i<3; i++) {
+          if (newTeam > 2)
+              newTeam = 0 ;
+
+          if (position[newTeam] < MAX_POINTS) {
+              return newTeam;
+          }
+
+          newTeam++ ;
+      }
+      return null ;
+  } ;
 
   const getQuestion = () => {
 
-      if (status !== SHOW_QUESTION)
+      if (status !== SHOW_QUESTION || currentTeam === null)
           return null ;
 
       const onComplete = correct => {
@@ -74,13 +90,11 @@ function App() {
               setPosition(p) ;
           }
 
-          let newTeam = currentTeam + 1 ;
-          if (newTeam > 2) {
-              newTeam = 0 ;
-              setCurrentQuestion(currentQuestion+1) ;
-          }
-
+          const newTeam = getNextTeam() ;
+          if (newTeam <= currentTeam)
+              setCurrentQuestion(currentQuestion+2) ;
           setCurrentTeam(newTeam) ;
+
           setStatus(null) ;
       } ;
 
@@ -89,10 +103,13 @@ function App() {
   } ;
 
 
+
+
   return (
       <>
         <div className="App">
             <div className='cars-container'>
+                <Flag />
                 {Object.keys(colors).map(color =>
                     <Car color={color} active={started} scale={carScale} position={position[colors[color]]} key={color} onClick={handleCarClick(color)}/> )}
             </div>

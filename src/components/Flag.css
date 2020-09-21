@@ -1,0 +1,11 @@
+.finish-flag {
+    margin-top: 10vh;
+    height: calc(40vh + 80px);
+    width: 100px;
+    background: url("images/flag.png");
+    background-repeat: no-repeat;
+    border-left: 2px dashed black;
+    left: 80%;
+    top:-80px;
+    position: absolute;
+}

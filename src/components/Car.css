@@ -1,0 +1,113 @@
+.car-body {
+    transform-origin: top left;
+    height: 10vh;
+    transition: margin-left 0.5s;
+}
+
+.car {
+    position: relative;
+}
+
+.car .wheel {
+    background: url('images/wheel.png');
+    width: 109px;
+    height: 109px;
+    position: absolute;
+}
+
+.car .car-label {
+    font-size: 100px;
+    color: white;
+    position: absolute;
+    font-weight: bold;
+}
+
+.car.yellow {
+    background: url("images/car-yellow.png");
+    width: 675px;
+    height: 208px;
+}
+
+.car.yellow .car-label {
+    top: 30px;
+    left: 290px;
+}
+
+.car.yellow .wheel:first-child {
+    top: 61px;
+    left: 98px;
+}
+
+.car.yellow .wheel:nth-child(2) {
+    top: 61px;
+    left: 468px;
+}
+
+
+.car.blue {
+    background: url('images/car-blue.png');
+    width: 731px;
+    height: 233px;
+}
+
+.car.blue .car-label {
+    top: 40px;
+    left: 300px;
+}
+
+.car.blue .wheel:first-child {
+    top: 87px;
+    left: 110px;
+}
+
+.car.blue .wheel:nth-child(2) {
+    top: 87px;
+    left: 514px;
+}
+
+
+.car.red {
+    background: url('images/car-red.png');
+    width: 729px;
+    height: 282px;
+    margin-top: -40px;
+}
+
+.car.red .car-label {
+    top: 70px;
+    left: 380px;
+}
+
+.car.red .wheel:first-child {
+    top: 136px;
+    left: 143px;
+}
+
+.car.red .wheel:nth-child(2) {
+    top: 136px;
+    left: 525px;
+}
+
+.wheel.active {
+    animation-name: wheel-rotation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes wheel-rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.cars-container {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    justify-content: space-between;
+    padding: 5vh 0;
+
+    background: url('images/road.jpg');
+    background-size: contain;
+}

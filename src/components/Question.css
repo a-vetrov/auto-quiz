@@ -1,0 +1,41 @@
+.question-container {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.3);
+}
+
+.question-block {
+    padding: 20px;
+    border-radius: 20px;
+    border: 5px solid black;
+    background: white;
+
+    font-size: 20pt;
+}
+
+.question-block.yellow {
+    border-color:yellow;
+}
+
+.question-block.red {
+    border-color:red;
+}
+
+.question-block.blue {
+    border-color:blue;
+}
+
+.ant-radio-wrapper {
+    font-size: 18pt;
+}
+
+.ant-radio-group {
+    margin-bottom: 20px;
+}

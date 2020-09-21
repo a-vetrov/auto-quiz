@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10vh;
+}

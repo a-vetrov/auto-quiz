@@ -1,0 +1,24 @@
+.start-button-container {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.3);
+}
+
+.start-button {
+    background: url("images/start-btn.png");
+    width: 600px;
+    height: 600px;
+
+    cursor: pointer;
+}
+
+.start-button:hover {
+
+}

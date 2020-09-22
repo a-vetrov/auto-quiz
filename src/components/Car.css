@@ -111,3 +111,20 @@
     background: url('images/road.jpg');
     background-size: contain;
 }
+
+.cup {
+    background: url("images/cup.svg");
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:-20px;
+    left:-100px;
+}
+
+.car.red .cup {
+    top:50px;
+}
+
+.car.blue .cup {
+    top: 10px;
+}

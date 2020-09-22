@@ -9,7 +9,7 @@ function Car({color, active, scale, position, onClick}) {
     const percent = Math.round(p / MAX_POINTS * 100) ;
     const translateX = position < MAX_POINTS ? percent : 0 ;
 
-    const cup = false && position < MAX_POINTS ? null : <div className='cup'/> ;
+    const cup = position < MAX_POINTS ? null : <div className='cup'/> ;
 
     return (
         <div style={{transform:`scale(${scale})`, marginLeft:`${percent * 0.8}%`}} className='car-body' onClick={onClick}>

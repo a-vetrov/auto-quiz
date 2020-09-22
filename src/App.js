@@ -45,7 +45,11 @@ function App() {
   const getStatusMessage = () => {
      switch (status) {
          case MOVE_BACK : return 'Выберите, какую машинку сдвинуть назад' ;
-         case SHOW_QUESTION : return `Вопрос для ${['желтой', 'красной', 'синей'][currentTeam]} команды` ;
+         case SHOW_QUESTION :
+             if(currentTeam !== null)
+                return `Вопрос для ${['желтой', 'красной', 'синей'][currentTeam]} команды` ;
+             else
+                 return 'Все игроки дошли до финиша' ;
          default: return null ;
      }
   } ;
@@ -65,7 +69,7 @@ function App() {
   const getNextTeam = () => {
       let newTeam = currentTeam + 1 ;
 
-      for (let i=0; i<3; i++) {
+      for (let i=0; i<2; i++) {
           if (newTeam > 2)
               newTeam = 0 ;
 

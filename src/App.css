@@ -7,3 +7,9 @@
   justify-content: space-around;
   margin-top: 10vh;
 }
+
+.status-bar {
+  margin-top: 20vh;
+  font-size: 20pt;
+  color: white;
+}

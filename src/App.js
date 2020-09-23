@@ -41,7 +41,6 @@ function App() {
   const handleBreakRule = () => setStatus(MOVE_BACK) ;
   const handleShowNewQuestion = () => setStatus(SHOW_QUESTION) ;
 
-
   const getStatusMessage = () => {
      switch (status) {
          case MOVE_BACK : return 'Выберите, какую машинку сдвинуть назад' ;
@@ -96,7 +95,7 @@ function App() {
 
           const newTeam = getNextTeam() ;
           if (newTeam <= currentTeam)
-              setCurrentQuestion(currentQuestion+2) ;
+              setCurrentQuestion(currentQuestion+1) ;
           setCurrentTeam(newTeam) ;
 
           setStatus(null) ;
